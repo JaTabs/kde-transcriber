@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Transcriber
+Comment=Turn audio and video into text, locally
+Exec=__RUN__
+Icon=__ICON__
+Terminal=false
+Categories=AudioVideo;
