@@ -2,15 +2,15 @@
 set -euo pipefail
 
 SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DEST="$HOME/.local/share/transcriber"
+DEST="$HOME/.local/share/kde-transcriber"
 VENV="$DEST/venv"
 APPS="$HOME/.local/share/applications"
 
 command -v ffmpeg >/dev/null || { echo "ffmpeg is required: install it with your package manager"; exit 1; }
 
 mkdir -p "$DEST" "$APPS"
-rm -rf "$DEST/transcriber" "$DEST/resources"
-cp -r "$SRC/transcriber" "$DEST/transcriber"
+rm -rf "$DEST/kde_transcriber" "$DEST/resources"
+cp -r "$SRC/kde_transcriber" "$DEST/kde_transcriber"
 cp -r "$SRC/resources" "$DEST/resources"
 
 echo ">> Creating environment (Python 3.12)…"
@@ -30,7 +30,7 @@ fi
 
 cat > "$DEST/run.sh" <<'RUNSH'
 #!/usr/bin/env bash
-DEST="$HOME/.local/share/transcriber"
+DEST="$HOME/.local/share/kde-transcriber"
 PY="$DEST/venv/bin/python"
 # CUDA libs come from the pip wheels (namespace packages); locate their dirs.
 LIBS="$("$PY" - <<'PYLIBS'
@@ -47,14 +47,14 @@ PYLIBS
 )"
 export LD_LIBRARY_PATH="${LIBS:+$LIBS:}${LD_LIBRARY_PATH:-}"
 export PYTHONPATH="$DEST"
-exec "$PY" -m transcriber "$@"
+exec "$PY" -m kde_transcriber "$@"
 RUNSH
 chmod +x "$DEST/run.sh"
 
-sed -e "s#__RUN__#$DEST/run.sh#g" -e "s#__ICON__#$DEST/resources/transcriber.svg#g" \
-    "$SRC/transcriber.desktop" | grep -v '^#!' > "$APPS/transcriber.desktop"
+sed -e "s#__RUN__#$DEST/run.sh#g" -e "s#__ICON__#$DEST/resources/kde-transcriber.svg#g" \
+    "$SRC/kde-transcriber.desktop" | grep -v '^#!' > "$APPS/kde-transcriber.desktop"
 command -v update-desktop-database >/dev/null && update-desktop-database "$APPS" >/dev/null 2>&1 || true
 command -v kbuildsycoca6 >/dev/null && kbuildsycoca6 >/dev/null 2>&1 || true
 
-echo ">> Done. Look for 'Transcriber' in your application menu."
+echo ">> Done. Look for 'KDE Transcriber' in your application menu."
 echo "   (The first run downloads the chosen Whisper model from Hugging Face.)"

@@ -13,13 +13,13 @@ def main():
 
     # No custom stylesheet or forced font: inherit the system theme (native look).
     app = QApplication(sys.argv)
-    app.setApplicationName("Transcriber")
+    app.setApplicationName("KDE Transcriber")
 
-    icon = Path(__file__).resolve().parent.parent / "resources" / "transcriber.svg"
+    icon = Path(__file__).resolve().parent.parent / "resources" / "kde-transcriber.svg"
     if icon.exists():
         app.setWindowIcon(QIcon(str(icon)))
 
     window = MainWindow(bridge)
     window.show()
-    logger.info("Transcriber started")
+    logger.info("KDE Transcriber started")
     sys.exit(app.exec())

@@ -1,11 +1,11 @@
 from pathlib import Path
 
-ORG = "transcriber"
-APP = "Transcriber"
+ORG = "kde-transcriber"
+APP = "KDE Transcriber"
 
 HOME = Path.home()
-DATA_DIR = HOME / ".local" / "share" / "transcriber"
-LOG_FILE = DATA_DIR / "transcriber.log"
+DATA_DIR = HOME / ".local" / "share" / "kde-transcriber"
+LOG_FILE = DATA_DIR / "kde-transcriber.log"
 
 DEFAULT_OUTPUT = HOME / "Transcriptions"
 

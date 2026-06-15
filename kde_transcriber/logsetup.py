@@ -21,7 +21,7 @@ class _QtHandler(logging.Handler):
 
 def setup_logging():
     LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
-    logger = logging.getLogger("transcriber")
+    logger = logging.getLogger("kde_transcriber")
     logger.setLevel(logging.INFO)
 
     bridge = LogBridge()

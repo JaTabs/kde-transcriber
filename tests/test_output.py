@@ -4,7 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from transcriber import output
+from kde_transcriber import output
 
 SEGMENTS = [(0.0, 2.0, "Hello"), (2.5, 5.0, "there")]
 META = {"source": "clip.mp4", "date": "2026-06-15", "duration": "0:00:05",

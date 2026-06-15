@@ -1,8 +1,13 @@
-# Transcriber
+# KDE Transcriber
 
 Turn audio and video into text on your own machine, on the GPU, without sending
 anything to the cloud. Built with [faster-whisper](https://github.com/SYSTRAN/faster-whisper)
 and ffmpeg. For Linux desktops (tested on KDE Plasma).
+
+> **Disclaimer:** This is an independent, third-party application. It is **not**
+> affiliated with, endorsed by, or associated with KDE e.V. or the KDE community.
+> "KDE" is a trademark of KDE e.V.; here it only indicates that the app is built
+> for the KDE Plasma desktop.
 
 ## Features
 
@@ -31,7 +36,7 @@ and ffmpeg. For Linux desktops (tested on KDE Plasma).
 ./uninstall.sh    # removes it (keeps your transcriptions and the model cache)
 ```
 
-The installer puts everything under `~/.local/share/transcriber/` and adds a
+The installer puts everything under `~/.local/share/kde-transcriber/` and adds a
 desktop entry. The first transcription downloads the selected Whisper model.
 
 ## Models and memory

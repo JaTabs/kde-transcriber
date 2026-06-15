@@ -12,7 +12,7 @@ from PySide6.QtWidgets import (
 from . import config
 from .worker import Worker
 
-log = logging.getLogger("transcriber")
+log = logging.getLogger("kde_transcriber")
 
 PATH_ROLE = Qt.UserRole
 TEXT_ROLE = Qt.UserRole + 1
@@ -50,7 +50,7 @@ def _section(text):
 class MainWindow(QWidget):
     def __init__(self, log_bridge=None):
         super().__init__()
-        self.setWindowTitle("Transcriber")
+        self.setWindowTitle("KDE Transcriber")
         self.resize(960, 660)
         self.setAcceptDrops(True)
 
@@ -76,7 +76,7 @@ class MainWindow(QWidget):
         root.setContentsMargins(20, 18, 20, 16)
         root.setSpacing(14)
 
-        title = QLabel("Transcriber")
+        title = QLabel("KDE Transcriber")
         tf = title.font()
         tf.setPointSize(max(20, tf.pointSize() + 9))
         tf.setBold(True)

@@ -1,7 +1,7 @@
 import gc
 import logging
 
-log = logging.getLogger("transcriber")
+log = logging.getLogger("kde_transcriber")
 
 _model = None
 _key = None

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=Transcriber
+Name=KDE Transcriber
 Comment=Turn audio and video into text, locally
 Exec=__RUN__
 Icon=__ICON__

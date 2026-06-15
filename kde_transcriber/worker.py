@@ -7,7 +7,7 @@ from PySide6.QtCore import QObject, Signal, Slot
 
 from . import engine, media, output
 
-log = logging.getLogger("transcriber")
+log = logging.getLogger("kde_transcriber")
 
 
 class Worker(QObject):
